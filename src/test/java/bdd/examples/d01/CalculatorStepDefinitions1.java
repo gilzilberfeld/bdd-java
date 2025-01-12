@@ -1,10 +1,10 @@
-import bdd.examples.d01.Calculator;
+package bdd.examples.d01;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class StepDefinitions {
+public class CalculatorStepDefinitions1 {
     Calculator calc;
 
     @Given("calculator was just turned on")
@@ -16,4 +16,8 @@ public class StepDefinitions {
         assertThat(calc.getDisplay()).isEqualTo("0");
     }
 
+    @Then("It shows {string}")
+    public void it_shows(String expected) {
+        assertThat(calc.getDisplay()).isEqualTo(expected);
+    }
 }
