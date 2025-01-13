@@ -4,6 +4,7 @@ import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.AriaRole;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,14 +19,14 @@ public class CalculatorStepDefinitions5 {
     private Browser browser;
     private Page page;
 
-    @Before()
+    @Before("@browser")
     public void setup() throws IOException {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
         page = browser.newPage();
     }
 
-    @After()
+    @After("@browser")
     public void cleanup() {
         page.close();
         browser.close();

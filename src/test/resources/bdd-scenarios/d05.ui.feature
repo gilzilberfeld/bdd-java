@@ -1,4 +1,5 @@
-Feature: Calculator UI
+@browser
+Feature: Calculator web page
 
   Scenario: When adding two numbers it shows the results
     Given calculator page is loaded
