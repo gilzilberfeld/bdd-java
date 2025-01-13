@@ -11,6 +11,7 @@ public class CalculatorStepDefinitions1 {
     public void calculator_was_just_turned_on() {
          calc = new Calculator();
     }
+
     @Then("It shows zero")
     public void it_shows_zero() {
         assertThat(calc.getDisplay()).isEqualTo("0");
